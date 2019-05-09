@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Document
+    style
+      include ./stylesheets/style.css
+      script(src='/javascripts/app.js')
+  body
+    .app
+      h2.title Create an account
+      .alert.hidden
+        | Here is some feedback
+      .signup
+        div
+          label(for='email') Email
+          input#email.input--text(type='text', name='email')
+        div
+          label(for='password') Password
+          input#password.input--text(type='password', name='password')
+        button.btn.btn--primary Let's go
