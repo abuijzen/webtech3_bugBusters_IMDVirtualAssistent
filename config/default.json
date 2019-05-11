@@ -1,13 +1,5 @@
 {
-  "Customer": {
-    "dbConfig": {
-      "host": "localhost",
-      "port": 27017,
-      "dbName": "messageLab5"
-    },
-    "credit": {
-      "initialLimit": 100,
-      "initialDays": 1
-    }
+  "Database": {
+    "conn": "mongodb://localhost:27017/test"
   }
 }

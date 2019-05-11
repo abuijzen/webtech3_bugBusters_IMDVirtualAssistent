@@ -1,10 +1,5 @@
 {
-  "Customer": {
-    "dbConfig": {
-      "host": "prod-db-server"
-    },
-    "credit": {
-      "initialDays": 30
-    }
+  "Database": {
+    "conn": "mongodb+srv://BugBustersAdmin:BugBuster@webtech3project-f8tsd.mongodb.net/test?retryWrites=true"
   }
 }

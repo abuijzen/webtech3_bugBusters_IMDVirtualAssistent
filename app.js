@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const config = require('config'); // for db connection
 
 //configs 
-const dbConfig = config.get('Customer.dbConfig');
+const dbConfig = config.get('Database.conn');
 //db.connect(dbConfig, ...);
 
 // connection maken met db in config 
@@ -21,13 +21,18 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let messagesRouter = require('./routes/api/v1/messages');
 
-
-
-mongoose.connect('mongodb://localhost:27017/messages', {
-  useNewUrlParser: true
-});
+// LOKAAL > default.json
+//mongoose.connect('mongodb://localhost:27017/messages', {   useNewUrlParser: true });
 // let connection = 'mongodb://localhost:27017/messageLab5';
 
+// MET CONFIG DB kiezen
+mongoose.set('useCreateIndex', true);
+mongoose.connect(config.get('Database.conn'), {
+  useNewUrlParser: true
+});
+
+console.log(config.get('Database'));
+console.log(process.env.node_env); // undefined = default
 
 //////////
 // test mongoose connection
