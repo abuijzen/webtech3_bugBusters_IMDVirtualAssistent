@@ -16,7 +16,7 @@ let getAll = (req, res) => {
           "messages": `GETTING message for user ${user}`,
           "user": user,
           "data": {
-            "todos": docs
+            "messages": docs
           }
         });
       } else if (!req.query.user) { //GET /api/v1/messages
@@ -24,7 +24,7 @@ let getAll = (req, res) => {
           "status": "success",
           "messages": "GETTING messages",
           "data": {
-            "todos": docs
+            "messages": docs
           }
         });
       }

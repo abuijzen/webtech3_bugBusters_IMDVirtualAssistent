@@ -5,6 +5,7 @@ let messagesSchema = new Schema({
   //status: String,
   user: String,
   text: String,
+
   /* text: {
         type: String,
         required: true
