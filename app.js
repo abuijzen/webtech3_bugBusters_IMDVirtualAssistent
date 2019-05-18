@@ -12,6 +12,7 @@ const apiMessagesRouter = require('./routes/api/v1/messages')
 
 //mongoose eerst: npm i mongoose
 const mongoose = require('mongoose');
+//gebruik nieuwste versie om indexes te gebruiken op true
 mongoose.set('useCreateIndex',true);
 //mongoose connecteerd met localhost op poort 27017 op databasenaam: messagesapp
 mongoose.connect('mongodb://localhost:27017/messagesapp',{useNewUrlParser:true});
@@ -21,7 +22,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 app.use(cors());
 app.use(logger('dev'));
