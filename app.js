@@ -25,6 +25,8 @@ app.set('view engine', 'pug');
 
 app.use(cors());
 app.use(logger('dev'));
+
+//vanaf dat er json gestuurd wordt zal express deze parsen/ontleden
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

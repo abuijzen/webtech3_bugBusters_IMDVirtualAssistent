@@ -1,9 +1,11 @@
+//passport module opvragen
 const passport=  require('passport');
-const User= require('./models/User');
+const User= require('../models/User');
 
-//hoe aanloggen en registreren
+//query inloggen en registreren
 passport.use(User.createStrategy());
 
-// use static serialize and deserialize of model for passport session support
+//serialize user data for sessions
+// gebruiker word naar een string geserialiseerd en wordt omgekeerd uitgelezen uit een sessie
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
