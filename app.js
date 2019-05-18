@@ -5,15 +5,18 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors =require('cors');
 
+//routers inladen
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const apiTodosRouter = require('./routes/api/v1/todos')
+const apiMessagesRouter = require('./routes/api/v1/messages')
 
+//mongoose eerst: npm i mongoose
 const mongoose = require('mongoose');
-//nieuwe syntax
 mongoose.set('useCreateIndex',true);
-mongoose.connect('mongodb://localhost:27017/todosapp',{useNewUrlParser:true});
+//mongoose connecteerd met localhost op poort 27017 op databasenaam: messagesapp
+mongoose.connect('mongodb://localhost:27017/messagesapp',{useNewUrlParser:true});
 
+//express opstarten, applicatie starten
 const app = express();
 
 // view engine setup
@@ -31,8 +34,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //Als je zou werken met sessie
 //app.use('/users',passport.authenticate('local'),usersRouter);
-app.use('/api/v1/todos', apiTodosRouter);
 
+//alle routes die hieraan voldoen, apiMessageRouter aan toevoegen, deze link naar een functie
+app.use('/api/v1/messages', apiMessagesRouter);
+
+// als er iets foutloopt wordt deze functie gestart
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

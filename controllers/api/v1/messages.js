@@ -1,13 +1,13 @@
-const Todo = require('../../../models/todo');
+const Message = require('../../../models/message');
 
 
 const getAll = (req,res)=>{
-    Todo.find({"user":"Angelique"}, (err,docs)=>{
+    Message.find({"user":"Angelique"}, (err,docs)=>{
         if (!err){
             res.json({
                 "status": "succes",
                 "data":{
-                    "todo":docs
+                    "message":docs
                 }
             });
         }
@@ -18,23 +18,23 @@ const getAll = (req,res)=>{
 
 const create = (req,res,next)=>{
     console.log(req.body);
-    let todo = new Todo();
-    todo.text=req.body.text;
-    todo.user = req.body.user;
-    todo.completed = req.body.completed;
+    let message = new Message();
+    message.text=req.body.text;
+    message.user = req.body.user;
+    message.completed = req.body.completed;
 
-    todo.save((err,doc)=>{
+    message.save((err,doc)=>{
         if(err){
             res.json({
                 "status":"error",
-                "message":"Could not save this item"
+                "Message":"Could not save this item"
             })
         }
         if(!err){
             res.json({
                 "status": "succes",
                 "data":{
-                    "todo":doc
+                    "message":doc
                 }
             });
         }
