@@ -12,7 +12,7 @@ function doBrowserSync(){
   
     browserSync.init({
         server:{
-            baseDir:"./views/signup.pug" 
+            baseDir:"./views/signup" 
         },
       });   
  
