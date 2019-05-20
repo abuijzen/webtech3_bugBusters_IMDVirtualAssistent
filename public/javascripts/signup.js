@@ -31,7 +31,19 @@ btnSignup.addEventListener("click", click =>{
             let feedback = document.querySelector(".alert");
             feedback.textContent= "Sign up complete!";
             feedback.classList.remove('hidden');
+            //na het aanlogen een token aanspreken
+            let token = json.data.token;
+
+            //token opslaan
+            localStorage.setItem("token",token);
+
+            //redirection werkt niet
+            //return res.redirect('/todos');
+            //res.send('window.location.href="todos.ejs";');
+            //window.location.href="/todos.ejs";
+            //window.location.href = "./todos.html";
         }
+
     })
         
     });

@@ -2,6 +2,9 @@ const User = require('../models/User')
 //login en signup query zit al in model User
 //post naar route signup
 
+//webtoken requiren
+const jwt = require('jsonwebtoken');
+
 //assyncrone functie, als deze klaar is worden de functies met await uitgevoerd
 const signup = async (req,res,next)=>{
 
@@ -20,8 +23,21 @@ const signup = async (req,res,next)=>{
     await user.setPassword(password);
     //user opslaan via mongoose
     await user.save().then(result =>{
+        console.log(result);
+        //token maken
+        let token = jwt.sign({
+            //uid opvragen van uit id die uit result komt
+            uid: result._id,
+            username : result.username
+            //token die wordt meegegeven
+    },"secret");
+
         res.json({
-        "status":"succes"
+        "status":"succes",
+        //token meegeven bij het inloggen
+        "data":{
+            "token": token
+        }
         })
     }).catch(error =>{
         res.json({

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors =require('cors');
+const passport = require('./passport/passport');
 
 //routers inladen
 const indexRouter = require('./routes/index');
@@ -38,8 +39,10 @@ app.use('/users', usersRouter);
 //Als je zou werken met sessie
 //app.use('/users',passport.authenticate('local'),usersRouter);
 
-//alle routes die hieraan voldoen, apiMessageRouter aan toevoegen, deze link naar een functie
-app.use('/api/v1/messages', apiMessagesRouter);
+//alle routes die hieraan voldoen, 
+app.use('/api/v1/messages', passport.authenticate('jwt',{ //eerst token checken of je naar deze pagina mag gaan
+  session: false }), 
+  apiMessagesRouter);//apiMessageRouter aan toevoegen, deze link naar een functie
 
 // als er iets foutloopt wordt deze functie gestart
 // catch 404 and forward to error handler
