@@ -1,0 +1,116 @@
+//colors
+$color_alto_approx: #ddd
+$color_celeste_approx: #ccc
+$blck: #000
+$white: #fff
+$color_sunset_orange_approx: #f94d35
+$blue: #00f
+$red: #f00
+$color_rose_bud_approx: #fcb3a8
+$color_spindle_approx: #b4c4e7
+$color_sapphire_approx: #32549d
+
+//fonts
+$font_0: Helvetica
+$font_1: sans-serif
+
+* 
+	//If you use compass, instead of the line below you could use + box-sizing($bs)
+	box-sizing: border-box
+
+html 
+	height: 100%
+	display: flex
+
+body 
+	font-family: $font_0, $font_1
+	background-color: $color_alto_approx
+	margin: auto
+
+.input--text::placeholder 
+	color: $color_celeste_approx
+
+.input--text 
+	font-size: 1em
+	width: 100%
+	padding: 0.4em
+	color: $blck
+	margin-bottom: 1em
+
+.app 
+	background-color: $white
+	width: 400px
+	//If you use compass, instead of the line below you could use + box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 1em $color_celeste_approx
+	font-size: 1.25em
+	padding: 1em
+
+.todos 
+
+.todo 
+	border-top: 1px solid $color_alto_approx
+	color: $color_sunset_orange_approx
+	display: flex
+	flex-direction: row
+	align-items: center
+	padding: 0.8em
+
+.todo__delete 
+	margin-left: auto
+	color: $blue
+	&:active 
+		color: $red
+
+
+.todo__state 
+	margin-right: 0.5em
+
+.todo--completed 
+	color: $color_rose_bud_approx
+	.todo__text 
+		display: inline-block
+		position: relative
+
+	.todo__state 
+		visibility: hidden
+
+	.todo__state::before 
+		content: "✔"
+		visibility: visible
+		color: $red
+		position: relative
+		top: -0.2em
+
+	.todo__text::before 
+		content: " "
+		display: block
+		position: absolute
+		height: 0.1em
+		width: 100%
+		margin-top: calc(1em / 2 - 2px)
+		border-bottom: 3px solid $color_sunset_orange_approx
+
+
+.btn 
+	font-size: 1em
+	padding: 0.5em
+	font-weight: bold
+	//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+	border-radius: 0.2em
+	border: none
+	color: $white
+	background-color: $color_sunset_orange_approx
+	cursor: pointer
+	&:active 
+		position: relative
+		top: 1px
+
+
+.hidden 
+	display: none
+
+.alert 
+	background-color: $color_spindle_approx
+	padding: 0.5em
+	margin-bottom: 1em
+	color: $color_sapphire_approx
