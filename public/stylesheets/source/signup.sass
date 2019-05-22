@@ -1,19 +1,10 @@
-// import variables
-@import 'variables'	
+// imports
+@import 'variables'	// import variables
+@import 'alert' // import alert
+@import 'btn' // import btn
+//@import 'style' // import algemene style ? 	
 
 // signup
-* 
-	box-sizing: border-box
-
-html 
-	height: 100%
-	display: flex
-
-body 
-	font-family: $font_0, $font_1
-	background-color: $color_alto_approx
-	margin: auto
-
 .input--text::placeholder 
 	color: $color_celeste_approx
 
@@ -76,26 +67,3 @@ body
 		margin-top: calc(1em / 2 - 2px)
 		border-bottom: 3px solid $color_sunset_orange_approx
 
-
-.btn 
-	font-size: 1em
-	padding: 0.5em
-	font-weight: bold
-	border-radius: 0.2em
-	border: none
-	color: $white
-	background-color: $color_sunset_orange_approx
-	cursor: pointer
-	&:active 
-		position: relative
-		top: 1px
-
-
-.hidden 
-	display: none
-
-.alert 
-	background-color: $color_spindle_approx
-	padding: 0.5em
-	margin-bottom: 1em
-	color: $color_sapphire_approx

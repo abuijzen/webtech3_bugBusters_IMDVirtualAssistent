@@ -1,10 +1,25 @@
-// import variables
-@import 'variables'	
+// imports
+@import 'variables'	// import variables
+@import 'alert' // import alert
+@import 'btn' // import btn
 
-// algemene stijl 
-body 
-	padding: 50px
-	font: 14px $font_0, $font_1, $font_2
+// algemene stijl + login / signup / todos 
+*
+box-sizing: border-box
 
-a 
-	color: $color_cerulean_approx
+html
+height: 100%
+display: flex
+
+body
+padding: 50px
+font: 14px $font_0, $font_1, $font_2
+//font-family: $font_0, $font_1
+background-color: $color_alto_approx
+margin: auto
+
+a
+color: $color_cerulean_approx
+
+.hidden 
+	display: none

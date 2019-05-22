@@ -1,10 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px Helvetica, Arial, sans-serif;
-}
+/* Error: Expected identifier.
+ *   ,
+ * 8 | box-sizing: border-box
+ *   |            ^
+ *   '
+ *   public/stylesheets/source/style.sass 8:12  root stylesheet */
 
-a {
-  color: #00b7ff;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected identifier.\a   \2577 \a 8 \2502  box-sizing: border-box\a   \2502             ^\a   \2575 \a   public/stylesheets/source/style.sass 8:12  root stylesheet";
 }
-
-/*# sourceMappingURL=style.css.map */
