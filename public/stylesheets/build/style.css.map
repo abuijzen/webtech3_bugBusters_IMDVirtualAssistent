@@ -1,1 +1,8 @@
-{"version":3,"sourceRoot":"","sources":["../source/style.sass","../source/_variables.sass"],"names":[],"mappings":"AAIA;EACC;EACA;;;AAED;EACC,OCHuB;EDQvB;EACA;;AAED;EACC;EACA,kBCfmB;EDgBnB;;;AAGD;EACC;;;AAED;EACC;EACA;;;AAED;EACC;EACA,kBC5BmB;ED6BnB;;;AAED;EAEC;;;AAED;EACC;EACA;;;AAED;EACC;EACA,kBCzCmB;ED0CnB","file":"style.css"}
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": ["../source/style.sass", "../source/_variables.sass"],
+    "names": [],
+    "mappings": "AAIA;EACC;EACA;;;AAED;EACC,OCHuB;EDQvB;EACA;;AAED;EACC;EACA,kBCfmB;EDgBnB;;;AAGD;EACC;;;AAED;EACC;EACA;;;AAED;EACC;EACA,kBC5BmB;ED6BnB;;;AAED;EAEC;;;AAED;EACC;EACA;;;AAED;EACC;EACA,kBCzCmB;ED0CnB",
+    "file": "style.css"
+}
