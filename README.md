@@ -29,7 +29,10 @@ sass --watch public/stylesheets/source/todos.sass public/stylesheets/build/todos
 ## BEM 
 
 .menu {}                    // BLOCK 
+
 .menu__item {}              // __ELEMENT 
+
 .menu__item--featured {}    // --Modifier
+
 .menu--footer {}    
 
